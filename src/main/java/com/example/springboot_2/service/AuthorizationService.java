@@ -4,11 +4,9 @@ import com.example.springboot_2.Authorities;
 import com.example.springboot_2.exceptions.InvalidCredentials;
 import com.example.springboot_2.exceptions.UnauthorizedUser;
 import com.example.springboot_2.repositories.UserRepository;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
 public class AuthorizationService {
     UserRepository userRepository = new UserRepository();
 

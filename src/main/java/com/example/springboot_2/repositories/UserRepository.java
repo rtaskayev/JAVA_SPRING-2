@@ -14,6 +14,11 @@ public class UserRepository {
         if (user.equals("ruslan") && password.equals("123")) {
             list.add(Authorities.READ);
             list.add(Authorities.WRITE);
+            list.add(Authorities.DELETE);
+        }
+
+        if (user.equals("ivan") && password.equals("321")) {
+            list.add(Authorities.READ);
         }
 
         return list;

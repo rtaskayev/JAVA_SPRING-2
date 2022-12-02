@@ -12,12 +12,12 @@ public class ExceptionHandlerAdvice {
 
     @ExceptionHandler(InvalidCredentials.class)
     public ResponseEntity<String> invalidCredentialsHandler(InvalidCredentials e) {
-        return new ResponseEntity<>(String.valueOf(e), HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
     }
 
     @ExceptionHandler(UnauthorizedUser.class)
     public ResponseEntity<String> unauthorizedUserHandler(UnauthorizedUser e) {
-        System.out.println("[ERROR]: " + e);
-        return new ResponseEntity<>(String.valueOf(e), HttpStatus.BAD_REQUEST);
+        System.out.println("[ERROR]: " + e.getMessage());
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 }
